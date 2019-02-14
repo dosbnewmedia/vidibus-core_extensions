@@ -5,15 +5,16 @@ class Object
   # Example:
   #   something.try!(:else) # => nil
   #
-  def try!(method)
-    begin
-      send(method)
-    rescue NoMethodError
-    rescue => e
-      raise e
+  if defined?(::Rails) && ::Rails::VERSION::MAJOR < 4
+    def try!(method)
+      begin
+        send(method)
+      rescue NoMethodError
+      rescue => e
+        raise e
+      end
     end
   end
-
   # Turns object into a key-value pair.
   # Stolen from active_support/core_ext
   def to_query(key)
