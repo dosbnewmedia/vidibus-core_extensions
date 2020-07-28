@@ -15,13 +15,13 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.license     = 'MIT'
 
-  s.required_rubygems_version = '>= 1.3.6'
+  s.required_rubygems_version = '>= 3'
   s.rubyforge_project = s.name
 
   s.add_development_dependency 'bundler', '>= 1.0.0'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rdoc'
-  s.add_development_dependency 'rspec', '~> 2'
+  s.add_development_dependency 'rspec', '~> 3'
   s.add_development_dependency 'rr'
   s.add_development_dependency 'simplecov'
 
