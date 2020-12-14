@@ -8,7 +8,7 @@ describe "Object" do
     end
 
     it "should return defined method" do
-      dog.try!(:out).should be_true
+      dog.try!(:out).should be_truthy
     end
 
     it "should return nil when calling undefined method" do

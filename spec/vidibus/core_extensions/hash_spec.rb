@@ -80,15 +80,15 @@ describe "Hash" do
     let(:hash) { {:some => "say", :any => "thing"} }
 
     it "should return true if all keys are given in hash" do
-      hash.keys?(:some, :any).should be_true
+      hash.keys?(:some, :any).should be_truthy
     end
 
     it "should return true if all keys are given in larger hash" do
-      hash.keys?(:any).should be_true
+      hash.keys?(:any).should be_truthy
     end
 
     it "should return false if any of the given key misses in hash" do
-      hash.keys?(:any, :thing).should be_false
+      hash.keys?(:any, :thing).should be_falsey
     end
   end
 
