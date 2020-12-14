@@ -35,7 +35,7 @@ describe "String" do
   describe "#permalink" do
     it "should call #latinize" do
       string = "hey"
-      mock(string).latinize { string }
+      allow(string).to receive(:latinize) { string }
       string.permalink.should eql(string)
     end
 

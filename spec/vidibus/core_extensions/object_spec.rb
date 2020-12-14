@@ -16,8 +16,10 @@ describe "Object" do
     end
 
     it "should re-raise exceptions" do
-      stub(dog).bark { raise("wuff") }
-      expect {dog.try!(:bark)}.to raise_exception("wuff")
+      allow(dog).to receive(:bark).and_raise("wuff")
+      expect {
+        dog.try!(:bark)
+      }.to raise_exception("wuff")
     end
   end
 end
