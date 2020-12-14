@@ -8,11 +8,11 @@ describe "Object" do
     end
 
     it "should return defined method" do
-      dog.try!(:out).should be_truthy
+      expect(dog.try!(:out)).to be_truthy
     end
 
     it "should return nil when calling undefined method" do
-      dog.try!(:food).should be_nil
+      expect(dog.try!(:food)).to be_nil
     end
 
     it "should re-raise exceptions" do
